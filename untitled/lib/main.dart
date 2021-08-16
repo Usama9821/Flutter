@@ -6,28 +6,36 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.orange,
         appBar: AppBar(
           title: Text("Dice App"),
           backgroundColor: Colors.black12,
         ),
-        body: DicePage(),
+        body: Dicer(),
       ),
     ),
   );
 }
 
-class DicePage extends StatefulWidget {
+class Dicer extends StatefulWidget {
   @override
-  _DicePageState createState() => _DicePageState();
+  _DicerState createState() => _DicerState();
 }
 
-class _DicePageState extends State<DicePage> {
+class _DicerState extends State<Dicer> {
   var first = Random().nextInt(6) + 1;
   var second = Random().nextInt(6) + 1;
   var third = Random().nextInt(6) + 1;
   var fourth = Random().nextInt(6) + 1;
-  var firstfinal;
+  var firstfinal = 0;
+  var secondresult = 0;
+  var thirdresult = 0;
+  var fourthresult = 0;
+  var tracker1 = 0;
+  var tracker2 = 0;
+  var tracker3 = 0;
+  var tracker4 = 0;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -38,11 +46,11 @@ class _DicePageState extends State<DicePage> {
           children: [
             Row(
               children: [
-                Text("Player 1 Score is = $first"),
+                Text("Player 1 Score = $first" + " Total is =$firstfinal"),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
                   Expanded(
@@ -50,7 +58,11 @@ class _DicePageState extends State<DicePage> {
                       child: Image.asset('images/dice$first.png'),
                       onPressed: () {
                         setState(() {
-                          first = Random().nextInt(6) + 1;
+                          if (tracker1 <= 9) {
+                            first = Random().nextInt(6) + 1;
+                            firstfinal = firstfinal + first;
+                            tracker1++;
+                          }
                         });
                       },
                     ),
@@ -69,7 +81,7 @@ class _DicePageState extends State<DicePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
                   Expanded(
@@ -93,6 +105,27 @@ class _DicePageState extends State<DicePage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 135, top: 10),
+                child: Row(
+                  children: [
+                    RaisedButton(
+                      child: Text("Reset"),
+                      onPressed: () {
+                        setState(() {
+                          firstfinal = 0;
+                          tracker1 = 0;
+                          tracker2 = 0;
+                          tracker3 = 0;
+                          tracker4 = 0;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
