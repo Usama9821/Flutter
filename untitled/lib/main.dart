@@ -1,5 +1,8 @@
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 void main() {
   return runApp(
@@ -8,7 +11,7 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.orange,
         appBar: AppBar(
-          title: Text("Dice App"),
+          title: Text("Dice Ludo App"),
           backgroundColor: Colors.black12,
         ),
         body: Dicer(),
@@ -40,13 +43,26 @@ class _DicerState extends State<Dicer> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 350,
-        width: 350,
+        height: 400,
+        width: 400,
         child: Column(
           children: [
             Row(
               children: [
-                Text("Player 1 Score = $first" + " Total is =$firstfinal"),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Text(
+                    "P1 Score = $first" + " Total is =$firstfinal",
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 45),
+                  child: Text(
+                    "P2 Score = $second" + " Total is =$secondresult",
+                    textAlign: TextAlign.right,
+                  ),
+                ),
               ],
             ),
             Padding(
@@ -62,6 +78,43 @@ class _DicerState extends State<Dicer> {
                             first = Random().nextInt(6) + 1;
                             firstfinal = firstfinal + first;
                             tracker1++;
+                            if (firstfinal >= 30) {
+                              Alert(
+                                context: context,
+                                type: AlertType.success,
+                                title: "Congratulations",
+                                desc: "Player 1 got 1st Position",
+                                buttons: [
+                                  DialogButton(
+                                    child: Text(
+                                      "CLOSE",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20),
+                                    ),
+                                    onPressed: () => Navigator.pop(context),
+                                    width: 120,
+                                  )
+                                ],
+                              ).show();
+                            } else if (tracker1 >= 9 && firstfinal < 30) {
+                              Alert(
+                                context: context,
+                                type: AlertType.error,
+                                title: "Loser",
+                                desc: "Player 1 lost",
+                                buttons: [
+                                  DialogButton(
+                                    child: Text(
+                                      "CLOSE",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20),
+                                    ),
+                                    onPressed: () => Navigator.pop(context),
+                                    width: 120,
+                                  )
+                                ],
+                              ).show();
+                            }
                           }
                         });
                       },
@@ -79,6 +132,22 @@ class _DicerState extends State<Dicer> {
                   ),
                 ],
               ),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Text(
+                    "P3 Score = $third" + " Total is =$thirdresult",
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 45),
+                  child: Text("P4 Score = $fourth" + " Total is =$fourthresult",
+                      textAlign: TextAlign.right),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.all(6.0),
@@ -109,11 +178,18 @@ class _DicerState extends State<Dicer> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 135, top: 10),
+                padding: const EdgeInsets.only(left: 143, top: 5),
                 child: Row(
                   children: [
-                    RaisedButton(
-                      child: Text("Reset"),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blueAccent,
+                        onPrimary: Colors.black87,
+                        minimumSize: Size(100, 40),
+                      ),
+                      child: Text(' Restart '),
+                      //color: Colors.black38,
+                      // textColor: Colors.white,
                       onPressed: () {
                         setState(() {
                           firstfinal = 0;
