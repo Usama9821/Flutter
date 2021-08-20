@@ -8,10 +8,10 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueAccent,
-        appBar: AppBar(
-          title: Text("Dice Rolling Ludo"),
-          backgroundColor: Colors.teal,
-        ),
+        //  appBar: AppBar(
+        //   title: Text("Dice Rolling Ludo"),
+        // backgroundColor: Colors.teal,
+        // ),
         body: DicePage(),
       ),
     ),
@@ -308,7 +308,7 @@ class _DicePageState extends State<DicePage> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 125, top: 20),
+                    padding: const EdgeInsets.only(left: 125, top: 30),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black54,
