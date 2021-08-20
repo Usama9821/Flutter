@@ -86,13 +86,13 @@ class _DicePageState extends State<DicePage> {
                 children: [
                   Expanded(
                     child: TextButton(
-                      child: Image.asset('images/dice$first.png'),
+                      child: Image.asset('images/dice$third.png'),
                       onPressed: () {
                         setState(() {
-                          if (tracker1 <= 9) {
-                            first = Random().nextInt(6) + 1;
-                            firstfinal = firstfinal + first;
-                            tracker1++;
+                          if (tracker3 <= 9) {
+                            third = Random().nextInt(6) + 1;
+                            thirdfinal = thirdfinal + third;
+                            tracker3++;
                           }
                         });
                       },
@@ -100,13 +100,13 @@ class _DicePageState extends State<DicePage> {
                   ),
                   Expanded(
                     child: TextButton(
-                      child: Image.asset('images/dice$second.png'),
+                      child: Image.asset('images/dice$fourth.png'),
                       onPressed: () {
                         setState(() {
-                          if (tracker2 <= 9) {
-                            second = Random().nextInt(6) + 1;
-                            secondfinal = secondfinal + second;
-                            tracker2++;
+                          if (tracker4 <= 9) {
+                            fourth = Random().nextInt(6) + 1;
+                            fourthfinal = fourthfinal + fourth;
+                            tracker4++;
                           }
                         });
                       },
@@ -155,7 +155,7 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 150, top: 5),
+                  padding: const EdgeInsets.only(left: 160, top: 5),
                   child: Text(
                     "Player 2",
                     textAlign: TextAlign.right,
@@ -166,7 +166,7 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
               ],
-            ),
+            ), //Player Names
             Row(
               children: [
                 Padding(
@@ -181,7 +181,7 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 129, top: 0),
+                  padding: const EdgeInsets.only(left: 140, top: 0),
                   child: Text(
                     "Score = $secondfinal",
                     textAlign: TextAlign.right,
@@ -192,13 +192,13 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
               ],
-            ),
+            ), //Score
             Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 0),
                   child: Text(
-                    "Rolled Dice = $tracker1",
+                    "Times Rolled = $tracker1",
                     textAlign: TextAlign.left,
                     style: const TextStyle(
                         color: Colors.white,
@@ -207,9 +207,9 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 90, top: 0),
+                  padding: const EdgeInsets.only(left: 87, top: 0),
                   child: Text(
-                    "Rolled Dice = $tracker2",
+                    "Times Rolled = $tracker2",
                     textAlign: TextAlign.right,
                     style: const TextStyle(
                         color: Colors.white,
@@ -218,7 +218,28 @@ class _DicePageState extends State<DicePage> {
                   ),
                 ),
               ],
-            ),
+            ), //Times Rolled
+            Row(
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blueAccent,
+                    onPrimary: Colors.black87,
+                    minimumSize: Size(100, 40),
+                  ),
+                  child: Text(' Restart '),
+                  onPressed: () {
+                    setState(() {
+                      firstfinal = 0;
+                      tracker1 = 0;
+                      tracker2 = 0;
+                      tracker3 = 0;
+                      tracker4 = 0;
+                    });
+                  },
+                )
+              ],
+            ) // Restart Button
           ],
         ),
       ),
