@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
 
-class ButtonWidget extends StatelessWidget{
+class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: RaisedButton(
-          onPressed: (){},
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('Elevated Button'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.amber,
+            onPrimary: Colors.redAccent,
+            shadowColor: Colors.green,
+            elevation: 20,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+          ),
+        ),
+        /* child: RaisedButton(
+          onPressed: () {},
           color: Colors.yellow,
           disabledTextColor: Colors.grey,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0)
-          ),
-          elevation: 20.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+          elevation: 25.0,
           splashColor: Colors.green,
           highlightColor: Colors.red,
           highlightElevation: 1.0,
-          child: Text("Raised Button"),
-        ),
+          child: Text("Raised Button"),*/
       ),
     );
   }
-
 }
 
 /*
@@ -44,11 +53,10 @@ class ButtonWidget extends StatelessWidget{
 *
 * */
 
-
 /*
 * TODO MaterialButton
 *
-* MaterialButton(
+ MaterialButton(
           minWidth: 250.0,
           onPressed: (){},
           colorBrightness: Brightness.dark,
@@ -79,7 +87,6 @@ class ButtonWidget extends StatelessWidget{
 *
 * */
 
-
 /*
 * TODO OutlineButton
 *
@@ -100,7 +107,6 @@ class ButtonWidget extends StatelessWidget{
         ),
 *
 * */
-
 
 /*
 * TODO IconButton

@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 
-class AppBarWidget extends StatelessWidget{
+class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        title: Text('App Bar Text'),
+        elevation: 10,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Open shopping cart',
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text('This is an appbar Screen'),
+      ),
     );
   }
-
 }
-
 
 /*
 * TODO Simple AppBar with Centre Title
@@ -21,7 +33,6 @@ class AppBarWidget extends StatelessWidget{
         centerTitle: true,
       ),
 * */
-
 
 /*
 *  TODO App Bar with a List of Action Buttons
@@ -41,7 +52,6 @@ class AppBarWidget extends StatelessWidget{
       ),
 *
 * */
-
 
 /*
 * TODO AppBar with Different IconTheme & TextTheme
@@ -67,7 +77,6 @@ class AppBarWidget extends StatelessWidget{
       ),
 *
 * */
-
 
 /*
 * TODO AppBar with only Title and Subtitle at Centre
@@ -114,25 +123,6 @@ class AppBarWidget extends StatelessWidget{
             ),
           ],
         ),
-      ),
-*
-* */
-
-
-/*
-* TODO Transparent AppBar
-*
-* AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text("Transparent AppBar"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-            ),
-            onPressed: () {},
-          )
-        ],
       ),
 *
 * */

@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Widgets Demo',
+      title: 'Flutter Basic Widgets Demo',
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.amber,
       ),
       home: new HomePage(),
       routes: <String, WidgetBuilder>{
@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Widgets Playground"),
+        title: Text("Widgets Arena :)"),
       ),
       body: ListView.builder(
           itemCount: widgetList.length,
