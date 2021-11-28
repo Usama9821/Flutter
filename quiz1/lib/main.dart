@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Rao M Usama - Assignemnt#2 Mobile app development'),
+          title: Text('Assignment'),
           backgroundColor: Colors.teal,
         ),
         body: Container(
