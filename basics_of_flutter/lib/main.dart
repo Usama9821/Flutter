@@ -33,12 +33,18 @@ main() {
           bottomNavigationBar: BottomNavigationBar(
             items: const [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.yellow,
+                ),
                 label: 'Home',
                 backgroundColor: Colors.red,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.green,
+                ),
                 label: 'Account',
                 //title is depreciated instead we use label widget
                 //title: Text("Account"),
