@@ -10,49 +10,50 @@ main() {
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Simple AppBar'),
-            actions: const <Widget>[
-              Icon(Icons.search),
+        appBar: AppBar(
+          title: Text('Simple AppBar'),
+          actions: const <Widget>[
+            Icon(Icons.search),
+          ],
+        ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              Text('Username'),
+              Text('Username'),
             ],
           ),
-          drawer: Drawer(
-            child: Column(
-              children: [
-                Text('Username'),
-                Text('Username'),
-              ],
+        ),
+        body: home(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+          backgroundColor: Colors.redAccent,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.yellow,
+              ),
+              label: 'Home',
+              backgroundColor: Colors.red,
             ),
-          ),
-          body: home(),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.add),
-            backgroundColor: Colors.redAccent,
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.yellow,
-                ),
-                label: 'Home',
-                backgroundColor: Colors.red,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Colors.green,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.green,
-                ),
-                label: 'Account',
-                //title is depreciated instead we use label widget
-                //title: Text("Account"),
+              label: 'Account',
+              //title is depreciated instead we use label widget
+              //title: Text("Account"),
 
-                backgroundColor: Colors.yellow,
-              ),
-            ],
-          )),
+              backgroundColor: Colors.yellow,
+            ),
+          ],
+        ),
+      ),
     ),
   );
 }
