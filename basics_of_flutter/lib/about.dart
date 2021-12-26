@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class about extends StatelessWidget {
   final String title;
   about(this.title);
+  String showmessage = "";
 
   @override
   Widget build(BuildContext context) {

@@ -26,11 +26,16 @@ class _homeState extends State<home> {
             height: 20,
             color: Colors.white,
           ),
+
+          //Passing dynamic text Data to next Screen
           ElevatedButton(
             child: Text('Go to Next Screen'),
             onPressed: () {
+              setState(() {
+                showmessage = msg.text;
+              });
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return about("From Home Screen to About Screen");
+                return about(showmessage);
               }));
             },
           ),
@@ -39,9 +44,9 @@ class _homeState extends State<home> {
           // ElevatedButton(
           //   child: Text('Show in Center'),
           //   onPressed: () {
-          //     setState(() {
-          //       showmessage = msg.text;
-          //     });
+          //      setState(() {
+          //        showmessage = msg.text;
+          //      });
           //   },
           // ),
           const Divider(
