@@ -28,17 +28,18 @@ class _homeState extends State<home> {
           ),
 
           //Passing dynamic text Data to next Screen
-          ElevatedButton(
-            child: Text('Go to Next Screen'),
-            onPressed: () {
-              setState(() {
-                showmessage = msg.text;
-              });
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return about(showmessage);
-              }));
-            },
-          ),
+          // ElevatedButton(
+          //   child: Text('Go to Next Screen'),
+          //   onPressed: () {
+          //     setState(() {
+          //       // showmessage = msg.text;
+          //     });
+          //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+          //       return SelectionPage();
+          //       // return about(showmessage);
+          //     }));
+          //   },
+          // ),
 
           //this button is to show text in center widget
           // ElevatedButton(
