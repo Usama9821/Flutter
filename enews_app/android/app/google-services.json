@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "753556365742",
+    "project_id": "e-news-app",
+    "storage_bucket": "e-news-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753556365742:android:7a863baee7a6ee640be83f",
+        "android_client_info": {
+          "package_name": "com.example.enews_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753556365742-hv37u4mm7u3gn4ld4v8equ48461aja9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enews_app",
+            "certificate_hash": "22137d512a30ff20cce9bcbee158cc6ad6f43eb3"
+          }
+        },
+        {
+          "client_id": "753556365742-e5q7trsngbq4kvuaauhqi50fujh60327.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQP4yA7H3NR9DZGuD38aWgjDXZWrHMHbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753556365742-e5q7trsngbq4kvuaauhqi50fujh60327.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
